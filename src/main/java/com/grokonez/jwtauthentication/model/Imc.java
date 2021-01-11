@@ -1,43 +1,30 @@
 package com.grokonez.jwtauthentication.model;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-
-import org.hibernate.annotations.NaturalId;
-
-
-
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
-@Table(name = "imc", uniqueConstraints = {
-        
-})
+@Table(name = "imc")
 public class Imc{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private Long iduser;
+	private Date date;
+    private Long user;
     private Double imc;
-
-   
+    private Integer age;
+    private Double diabetes=0.0;
+    private Double glucosa = 0.0;
     public Imc() {}
 
-    public Imc(Long iduser, Double imc) {
-        this.iduser = iduser;
+    public Imc(Long id, Date date, Long user, Double imc, Integer age, Double glucosa,Double diabetes) {
+        this.id = id;
+        this.date = date;
+        this.user = user;
         this.imc = imc;
+        this.age = age;
+        this.glucosa = glucosa;
+        this.diabetes=diabetes;
     }
 
     public Long getId() {
@@ -48,12 +35,28 @@ public class Imc{
         this.id = id;
     }
 
-    public Long getIduser() {
-        return iduser;
+    public Date getDate() {
+        return date;
     }
 
-    public void setIiduser(Long iduser) {
-        this.iduser = iduser;
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Long getUser() {
+        return user;
+    }
+
+    public void setUser(Long user) {
+        this.user = user;
+    }
+
+    public Double getDiabetes() {
+        return diabetes;
+    }
+
+    public void setDiabetes(Double diabetes) {
+        this.diabetes = diabetes;
     }
 
     public Double getImc() {
@@ -64,5 +67,19 @@ public class Imc{
         this.imc = imc;
     }
 
-   
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Double getGlucosa() {
+        return glucosa;
+    }
+
+    public void setGlucosa(Double glucosa) {
+        this.glucosa = glucosa;
+    }
 }
