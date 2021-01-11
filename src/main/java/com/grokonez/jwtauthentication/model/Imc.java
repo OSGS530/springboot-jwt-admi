@@ -10,16 +10,14 @@ public class Imc{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	private Date date;
-    @ManyToOne
-    @JoinColumn(name="user_imc")
-    private User user;
+    private Long user;
     private Double imc;
     private Integer age;
     private Double diabetes=0.0;
     private Double glucosa = 0.0;
     public Imc() {}
 
-    public Imc(Long id, Date date, User user, Double imc, Integer age, Double glucosa,Double diabetes) {
+    public Imc(Long id, Date date, Long user, Double imc, Integer age, Double glucosa,Double diabetes) {
         this.id = id;
         this.date = date;
         this.user = user;
@@ -45,11 +43,11 @@ public class Imc{
         this.date = date;
     }
 
-    public User getUser() {
+    public Long getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Long user) {
         this.user = user;
     }
 

@@ -9,7 +9,6 @@ com/grokonez/jwtauthentication/message/request/LoginForm.class
 com/grokonez/jwtauthentication/SpringBootJwtAuthenticationApplication.class
 com/grokonez/jwtauthentication/repository/UserRepository.class
 com/grokonez/jwtauthentication/model/User.class
-com/grokonez/jwtauthentication/config/SwaggerConfig.class
 com/grokonez/jwtauthentication/security/jwt/JwtAuthTokenFilter.class
 com/grokonez/jwtauthentication/security/WebSecurityConfig.class
 com/grokonez/jwtauthentication/security/jwt/JwtProvider.class
